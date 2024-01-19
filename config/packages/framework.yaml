@@ -1,5 +1,7 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
+
+
     secret: '%env(APP_SECRET)%'
     #csrf_protection: true
     http_method_override: false
@@ -17,6 +19,10 @@ framework:
     #fragments: true
     php_errors:
         log: true
+
+    serializer:
+        default_context:
+            json_encode_options: JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON
 
 when@test:
     framework:
